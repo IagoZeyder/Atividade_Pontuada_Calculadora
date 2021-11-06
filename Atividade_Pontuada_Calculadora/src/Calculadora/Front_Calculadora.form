@@ -78,7 +78,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="txtTela" min="-2" pref="374" max="-2" attributes="0"/>
+              <Component id="txtResultado" min="-2" pref="374" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -89,7 +89,7 @@
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txtTela" min="-2" pref="101" max="-2" attributes="0"/>
+              <Component id="txtResultado" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botaoDividir" alignment="3" min="-2" pref="66" max="-2" attributes="0"/>
@@ -144,71 +144,113 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="%"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoPorcetagemActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoDividir">
       <Properties>
         <Property name="text" type="java.lang.String" value="/"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoDividirActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoLimpar">
       <Properties>
         <Property name="text" type="java.lang.String" value="AC"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimparActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoMultiplicar">
       <Properties>
         <Property name="text" type="java.lang.String" value="x"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoMultiplicarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaosubtrair">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaosubtrairActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoSomar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSomarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoNove">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoNoveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoOito">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoOitoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoSete">
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSeteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoCinco">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCincoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoSeis">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSeisActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoQuatro">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoQuatroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoDois">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoDoisActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoTres">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoTresActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoPonto">
       <Properties>
@@ -219,20 +261,31 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoUmActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoZero">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoZeroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botaoIgual">
       <Properties>
         <Property name="text" type="java.lang.String" value="="/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoIgualActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTela">
+    <Component class="javax.swing.JTextField" name="txtResultado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="18" style="0"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

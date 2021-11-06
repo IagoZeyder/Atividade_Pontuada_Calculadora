@@ -46,7 +46,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
         botaoUm = new javax.swing.JButton();
         botaoZero = new javax.swing.JButton();
         botaoIgual = new javax.swing.JButton();
-        txtTela = new javax.swing.JTextField();
+        txtResultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,42 +54,127 @@ public class Front_Calculadora extends javax.swing.JFrame {
         jLabel1.setText("Calculadora");
 
         botaoPorcetagem.setText("%");
+        botaoPorcetagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPorcetagemActionPerformed(evt);
+            }
+        });
 
         botaoDividir.setText("/");
+        botaoDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDividirActionPerformed(evt);
+            }
+        });
 
         botaoLimpar.setText("AC");
+        botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimparActionPerformed(evt);
+            }
+        });
 
         botaoMultiplicar.setText("x");
+        botaoMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMultiplicarActionPerformed(evt);
+            }
+        });
 
         botaosubtrair.setText("-");
+        botaosubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaosubtrairActionPerformed(evt);
+            }
+        });
 
         botaoSomar.setText("+");
+        botaoSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSomarActionPerformed(evt);
+            }
+        });
 
         botaoNove.setText("9");
+        botaoNove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNoveActionPerformed(evt);
+            }
+        });
 
         botaoOito.setText("8");
+        botaoOito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOitoActionPerformed(evt);
+            }
+        });
 
         botaoSete.setText("7");
+        botaoSete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSeteActionPerformed(evt);
+            }
+        });
 
         botaoCinco.setText("5");
+        botaoCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCincoActionPerformed(evt);
+            }
+        });
 
         botaoSeis.setText("6");
+        botaoSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSeisActionPerformed(evt);
+            }
+        });
 
         botaoQuatro.setText("4");
+        botaoQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoQuatroActionPerformed(evt);
+            }
+        });
 
         botaoDois.setText("2");
+        botaoDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDoisActionPerformed(evt);
+            }
+        });
 
         botaoTres.setText("3");
+        botaoTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoTresActionPerformed(evt);
+            }
+        });
 
         botaoPonto.setText(".");
 
         botaoUm.setText("1");
+        botaoUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoUmActionPerformed(evt);
+            }
+        });
 
         botaoZero.setText("0");
+        botaoZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoZeroActionPerformed(evt);
+            }
+        });
 
         botaoIgual.setText("=");
+        botaoIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoIgualActionPerformed(evt);
+            }
+        });
 
-        txtTela.setText("...");
+        txtResultado.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,7 +223,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 .addContainerGap(137, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTela, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(149, 149, 149))
         );
         layout.setVerticalGroup(
@@ -147,7 +232,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(txtTela, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoDividir, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,6 +268,93 @@ public class Front_Calculadora extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    Num1Num2 num = new Num1Num2();
+    executando exe = new executando();
+    double num1;
+    double num2;
+    String sinal;
+    boolean somar, subtrair, dividir,multiplicar;
+    private void botaoZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoZeroActionPerformed
+        txtResultado.setText(txtResultado.getText() +"0");
+    }//GEN-LAST:event_botaoZeroActionPerformed
+
+    private void botaoUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUmActionPerformed
+        txtResultado.setText(txtResultado.getText() +"1");
+    }//GEN-LAST:event_botaoUmActionPerformed
+
+    private void botaoDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDoisActionPerformed
+        txtResultado.setText(txtResultado.getText() +"2");
+    }//GEN-LAST:event_botaoDoisActionPerformed
+
+    private void botaoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTresActionPerformed
+        txtResultado.setText(txtResultado.getText() +"3");
+    }//GEN-LAST:event_botaoTresActionPerformed
+
+    private void botaoQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoQuatroActionPerformed
+        txtResultado.setText(txtResultado.getText() +"4");
+    }//GEN-LAST:event_botaoQuatroActionPerformed
+
+    private void botaoCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCincoActionPerformed
+        txtResultado.setText(txtResultado.getText() +"5");
+    }//GEN-LAST:event_botaoCincoActionPerformed
+
+    private void botaoSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSeisActionPerformed
+        txtResultado.setText(txtResultado.getText() +"6");
+    }//GEN-LAST:event_botaoSeisActionPerformed
+
+    private void botaoSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSeteActionPerformed
+        txtResultado.setText(txtResultado.getText() +"7");
+    }//GEN-LAST:event_botaoSeteActionPerformed
+
+    private void botaoOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOitoActionPerformed
+        txtResultado.setText(txtResultado.getText() +"8");
+    }//GEN-LAST:event_botaoOitoActionPerformed
+
+    private void botaoNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNoveActionPerformed
+        txtResultado.setText(txtResultado.getText() +"9");
+    }//GEN-LAST:event_botaoNoveActionPerformed
+
+    private void botaoMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMultiplicarActionPerformed
+        txtResultado.setText(txtResultado.getText() +"x");
+    }//GEN-LAST:event_botaoMultiplicarActionPerformed
+
+    private void botaosubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaosubtrairActionPerformed
+        
+        txtResultado.setText(txtResultado.getText() +"-");
+    }//GEN-LAST:event_botaosubtrairActionPerformed
+
+    private void botaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomarActionPerformed
+        num1 = Double.parseDouble(txtResultado.getText());
+        txtResultado.setText(" ");        
+        num.setNum1(num1); 
+        sinal = "soma";
+        somar = true;
+        
+        
+    }//GEN-LAST:event_botaoSomarActionPerformed
+
+    private void botaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDividirActionPerformed
+        txtResultado.setText(txtResultado.getText() +"/");
+    }//GEN-LAST:event_botaoDividirActionPerformed
+
+    private void botaoPorcetagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPorcetagemActionPerformed
+        txtResultado.setText(txtResultado.getText() +"%");
+    }//GEN-LAST:event_botaoPorcetagemActionPerformed
+
+    private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
+        txtResultado.setText(" ");
+    }//GEN-LAST:event_botaoLimparActionPerformed
+
+    private void botaoIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIgualActionPerformed
+        num2 = Double.parseDouble(txtResultado.getText());
+        num.setNum2(num2);
+        if(somar == true){
+            txtResultado.setText(exe.calculoSomar(num1, num2)+" ");
+            somar = false;
+        }else{
+            txtResultado.setText("Voce não escolheu a operação");
+        }
+    }//GEN-LAST:event_botaoIgualActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,6 +411,6 @@ public class Front_Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botaoZero;
     private javax.swing.JButton botaosubtrair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtTela;
+    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }

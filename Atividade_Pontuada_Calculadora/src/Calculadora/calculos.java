@@ -9,11 +9,11 @@ package Calculadora;
  *
  * @author paren
  */
-public interface NewInterface {
-    public double soma();
-    public double subtrair();
-    public double dividir();
-    public double multiplicar();
+public interface calculos {
+    public double soma(double a, double b);
+    public double subtrair(double a, double b);
+    public double dividir(double a, double b);
+    public double multiplicar(double a, double b);
     
     
 }
