@@ -315,14 +315,22 @@ public class Front_Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoNoveActionPerformed
 
     private void botaoMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMultiplicarActionPerformed
-        txtResultado.setText(txtResultado.getText() +"x");
+        num1 = num1 = Double.parseDouble(txtResultado.getText());
+        txtResultado.setText(" ");
+        num.setNum1(num1); 
+        sinal = "multiplicar";
+        multiplicar = true;
     }//GEN-LAST:event_botaoMultiplicarActionPerformed
 
     private void botaosubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaosubtrairActionPerformed
+        num1 = num1 = Double.parseDouble(txtResultado.getText());
+        txtResultado.setText(" ");
+        num.setNum1(num1); 
+        sinal = "subtrair";
+        subtrair = true;
         
-        txtResultado.setText(txtResultado.getText() +"-");
     }//GEN-LAST:event_botaosubtrairActionPerformed
-
+    
     private void botaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomarActionPerformed
         num1 = Double.parseDouble(txtResultado.getText());
         txtResultado.setText(" ");        
@@ -334,7 +342,11 @@ public class Front_Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoSomarActionPerformed
 
     private void botaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDividirActionPerformed
-        txtResultado.setText(txtResultado.getText() +"/");
+        num1 = Double.parseDouble(txtResultado.getText());
+        txtResultado.setText(" ");        
+        num.setNum1(num1); 
+        sinal = "dividir";
+        dividir = true;
     }//GEN-LAST:event_botaoDividirActionPerformed
 
     private void botaoPorcetagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPorcetagemActionPerformed
@@ -349,10 +361,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
         num2 = Double.parseDouble(txtResultado.getText());
         num.setNum2(num2);
         if(somar == true){
-            txtResultado.setText(exe.calculoSomar(num1, num2)+" ");
+            txtResultado.setText(exe.calculoSomar(num.getNum1(), num.getNum2())+" ");
             somar = false;
-        }else{
-            txtResultado.setText("Voce não escolheu a operação");
+        }else if(subtrair == true){
+            txtResultado.setText(exe.subtrair(num.getNum1(), num.getNum2())+" ");
+        }else if(multiplicar == true){
+            txtResultado.setText(exe.multiplicar(num.getNum1(), num.getNum2())+" ");
+        }else if(dividir == true){
+            txtResultado.setText(exe.dividir(num.getNum1(), num.getNum2())+" ");
         }
     }//GEN-LAST:event_botaoIgualActionPerformed
 
