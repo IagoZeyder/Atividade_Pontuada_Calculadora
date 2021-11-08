@@ -152,6 +152,11 @@ public class Front_Calculadora extends javax.swing.JFrame {
         });
 
         botaoPonto.setText(".");
+        botaoPonto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPontoActionPerformed(evt);
+            }
+        });
 
         botaoUm.setText("1");
         botaoUm.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +278,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
     double num1;
     double num2;
     String sinal;
-    boolean somar, subtrair, dividir,multiplicar;
+    boolean somar, subtrair, dividir,multiplicar, porcentagem, porce2;
     private void botaoZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoZeroActionPerformed
         txtResultado.setText(txtResultado.getText() +"0");
     }//GEN-LAST:event_botaoZeroActionPerformed
@@ -327,8 +332,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
         txtResultado.setText(" ");
         num.setNum1(num1); 
         sinal = "subtrair";
-        subtrair = true;
-        
+        subtrair = true;        
     }//GEN-LAST:event_botaosubtrairActionPerformed
     
     private void botaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomarActionPerformed
@@ -336,9 +340,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
         txtResultado.setText(" ");        
         num.setNum1(num1); 
         sinal = "soma";
-        somar = true;
-        
-        
+        somar = true;                
     }//GEN-LAST:event_botaoSomarActionPerformed
 
     private void botaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDividirActionPerformed
@@ -350,27 +352,67 @@ public class Front_Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoDividirActionPerformed
 
     private void botaoPorcetagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPorcetagemActionPerformed
-        txtResultado.setText(txtResultado.getText() +"%");
+        num1 = Double.parseDouble(txtResultado.getText());
+        txtResultado.setText(" ");        
+        num.setNum1(num1); 
+        sinal = "Porcetagem";
+        porcentagem = true;         
     }//GEN-LAST:event_botaoPorcetagemActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         txtResultado.setText(" ");
+        num.setNum1(0.0);
+        num.setNum2(0.0);
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIgualActionPerformed
-        num2 = Double.parseDouble(txtResultado.getText());
-        num.setNum2(num2);
-        if(somar == true){
-            txtResultado.setText(exe.calculoSomar(num.getNum1(), num.getNum2())+" ");
-            somar = false;
-        }else if(subtrair == true){
-            txtResultado.setText(exe.subtrair(num.getNum1(), num.getNum2())+" ");
-        }else if(multiplicar == true){
-            txtResultado.setText(exe.multiplicar(num.getNum1(), num.getNum2())+" ");
-        }else if(dividir == true){
-            txtResultado.setText(exe.dividir(num.getNum1(), num.getNum2())+" ");
+        String s = txtResultado.getText();                
+        if(s.equals (" ") ){            
+            num2 = 1;
+            num.setNum2(num2);
+            if(porcentagem == true){                                                    
+                txtResultado.setText(exe.porcentagem(num.getNum1(),num.getNum2())+" ");
+                porcentagem = false;                                                                   
+            }
+            else{
+                txtResultado.setText("Digite mais um valor ");
+            }
         }
+        else{
+            num2 = Double.parseDouble(s);            
+            num.setNum2(num2);            
+            if(porcentagem == true){                                                        
+                txtResultado.setText(exe.porcentagem(num.getNum1(),num.getNum2())+" ");
+                porcentagem = false;                                                                               
+            }
+            
+            else if(somar == true){           
+                txtResultado.setText(exe.calculoSomar(num.getNum1(), num.getNum2())+" ");
+                somar = false;
+            }
+             else if(somar == true && porcentagem == true){
+                num2 = num1 /100;
+                txtResultado.setText(exe.calculoSomar(num.getNum1(), num.getNum2())+" ");
+                somar = false;
+            }
+            else if(subtrair == true){               
+                txtResultado.setText(exe.subtrair(num.getNum1(), num.getNum2())+" ");
+                subtrair = false;                      
+            }
+            else if(multiplicar == true){                        
+                txtResultado.setText(exe.multiplicar(num.getNum1(), num.getNum2())+" ");
+                multiplicar = false;
+            }
+            else if(dividir == true){           
+                txtResultado.setText(exe.dividir(num.getNum1(), num.getNum2())+" ");
+                dividir = false;
+            }
+        }        
     }//GEN-LAST:event_botaoIgualActionPerformed
+
+    private void botaoPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontoActionPerformed
+        txtResultado.setText(txtResultado.getText() +".");
+    }//GEN-LAST:event_botaoPontoActionPerformed
 
     /**
      * @param args the command line arguments

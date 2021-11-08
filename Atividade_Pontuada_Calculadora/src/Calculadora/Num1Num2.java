@@ -12,6 +12,7 @@ package Calculadora;
 public class Num1Num2 {
     private Double num1;
     private Double num2;
+    private Double num3;
     
     public void setNum1(Double num1){
         this.num1 = num1;
@@ -25,6 +26,12 @@ public class Num1Num2 {
     public double getNum2(){
         return this.num2;
     }
+    public void setNum3(Double num3){
+        this.num3 = num3;
+    }
+    public Double getNum3(){
+        return this.num3;
+    }    
         
     
 }

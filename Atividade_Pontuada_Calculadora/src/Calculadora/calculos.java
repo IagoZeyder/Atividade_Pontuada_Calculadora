@@ -14,6 +14,5 @@ public interface calculos {
     public double subtrair(double a, double b);
     public double dividir(double a, double b);
     public double multiplicar(double a, double b);
-    
-    
+    public double porcentagem(double a, double b);        
 }
