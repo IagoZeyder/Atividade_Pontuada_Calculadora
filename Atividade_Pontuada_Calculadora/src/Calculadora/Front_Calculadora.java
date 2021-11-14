@@ -280,6 +280,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
     Num1Num2 num = new Num1Num2();
     executando exe = new executando();
     String num1, num2, sinal;    
