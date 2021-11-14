@@ -34,23 +34,33 @@ public class executando extends pegarNum implements calculos, Porcentagem {
 
     @Override
     public double somarPorcentagem(double a, double b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return a + b;
     }
 
     @Override
     public double subtrairPorcentagem(double a, double b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return a - b;
     }
 
     @Override
     public double dividirPorcentagem(double a, double b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return a / b;
     }
 
     @Override
     public double multiplicarPorcentagem(double a, double b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return a * b;
     }
+
+    @Override
+    public double porcentemUmNumero(double a) {
+        return a / 100;
+    }
+
+    @Override
+    public double porcentemDoisNumero(double a, double b) {
+        return (a/100) * b;
+    }    
 
     
     
