@@ -283,7 +283,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
     
     Num1Num2 num = new Num1Num2();
     executando exe = new executando();
-    String num1, num2, sinal;    
+    String num1, num2, sinal, n01, n02;    
     Double num01, num02, num03, num04;
     int resp, n1, n2;
     boolean somar = false; boolean subtrair = false; boolean multiplicar = false;
@@ -293,25 +293,28 @@ public class Front_Calculadora extends javax.swing.JFrame {
     String contaTxt1, contaTxt2, resp1, ponto, negativo;    
     DecimalFormat formatador = new DecimalFormat("0");       
     private void botaoZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoZeroActionPerformed
-        if(calculo == true ){
-            resp1 = " "; 
+        if(calculo == true){
+        resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "0");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"0";                                                                        
@@ -321,32 +324,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "0");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "0");        
                     contaTxt2 = txtResultado.getText();                    
@@ -354,24 +358,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "0");        
                     contaTxt2 = txtResultado.getText();                    
@@ -379,24 +384,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "0");        
                     contaTxt2 = txtResultado.getText();                    
@@ -404,51 +410,79 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"0";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "0");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-            num.setNum2(conta2);
-        }        
+            num.setNum1(conta1);
+        }
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "0");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"0");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"0");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }         
     }//GEN-LAST:event_botaoZeroActionPerformed
 
     private void botaoUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUmActionPerformed
         if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "1");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"1";                                                                        
@@ -458,32 +492,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "1");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "1");        
                     contaTxt2 = txtResultado.getText();                    
@@ -491,24 +526,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "1");        
                     contaTxt2 = txtResultado.getText();                    
@@ -516,24 +552,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "1");        
                     contaTxt2 = txtResultado.getText();                    
@@ -541,28 +578,54 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"1";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "1");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }                
+            num.setNum1(conta1);
+        }
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "1");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"1");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"1");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }                 
     }//GEN-LAST:event_botaoUmActionPerformed
 
     private void botaoDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDoisActionPerformed
@@ -702,12 +765,27 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
         }
-        else if(calculo == false && contaTxt1 == null && negativo2 == false){
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "2");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
             num.setNum1(conta1);
         }
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "2");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"2");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
         else if(calculo == false && contaTxt1 == null && negativo2 == true){            
             txtResultado.setText(null);
             txtResultado.setText(txtResultado.getText() +negativo+"2");                        
@@ -722,22 +800,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
     if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "3");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"3";                                                                        
@@ -747,32 +828,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "3");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "3");        
                     contaTxt2 = txtResultado.getText();                    
@@ -780,24 +862,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
-                    contaTxt2 = txtResultado.getText()+"3";                                                                        
+                    contaTxt2 = txtResultado.getText()+"2";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "3");        
                     contaTxt2 = txtResultado.getText();                    
@@ -805,24 +888,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "3");        
                     contaTxt2 = txtResultado.getText();                    
@@ -830,50 +914,81 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"3";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "3");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }    
+            num.setNum1(conta1);
+        } 
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "3");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"3");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"3");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        } 
+        
+    
     }//GEN-LAST:event_botaoTresActionPerformed
 
     private void botaoQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoQuatroActionPerformed
     if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "4");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"4";                                                                        
@@ -883,32 +998,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "4");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "4");        
                     contaTxt2 = txtResultado.getText();                    
@@ -916,24 +1032,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "4");        
                     contaTxt2 = txtResultado.getText();                    
@@ -941,24 +1058,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "4");        
                     contaTxt2 = txtResultado.getText();                    
@@ -966,50 +1084,79 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"4";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "4");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }    
+            num.setNum1(conta1);
+        }  
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "4");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"4");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"4");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }     
     }//GEN-LAST:event_botaoQuatroActionPerformed
 
     private void botaoCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCincoActionPerformed
         if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "5");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"5";                                                                        
@@ -1019,32 +1166,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "5");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "5");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1052,24 +1200,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "5");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1077,24 +1226,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "5");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1102,28 +1252,54 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"5";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "5");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
         }    
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "5");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"5");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"5");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }     
         
     }//GEN-LAST:event_botaoCincoActionPerformed
 
@@ -1131,22 +1307,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
         if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "6");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"6";                                                                        
@@ -1156,32 +1335,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "6");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "6");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1189,24 +1369,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "6");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1214,24 +1395,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "6");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1239,28 +1421,54 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"6";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "6");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
         }    
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "6");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"6");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"6");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }     
         
     }//GEN-LAST:event_botaoSeisActionPerformed
 
@@ -1268,22 +1476,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
        if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "7");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"7";                                                                        
@@ -1293,32 +1504,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "7");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "7");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1326,24 +1538,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "7");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1351,24 +1564,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "7");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1376,50 +1590,79 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"7";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "7");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }            
+            num.setNum1(conta1);
+        }    
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "7");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"7");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"7");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }             
     }//GEN-LAST:event_botaoSeteActionPerformed
 
     private void botaoOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOitoActionPerformed
        if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "8");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"8";                                                                        
@@ -1429,32 +1672,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "8");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "8");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1462,24 +1706,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "8");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1487,24 +1732,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "8");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1512,50 +1758,79 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"8";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "8");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }    
+            num.setNum1(conta1);
+        }
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "8");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"8");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"8");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }     
     }//GEN-LAST:event_botaoOitoActionPerformed
 
     private void botaoNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNoveActionPerformed
        if(calculo == true){
         resp1 = " "; 
             if(somar == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "9");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
+                    num.setNum2(conta2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " + " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null
+                        && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"9";                                                                        
@@ -1565,32 +1840,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
                 }
             }
             else if(subtrair == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "9");        
                     contaTxt2 = txtResultado.getText();                    
                     txtResultado.setText(null);    
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                    
+                    conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
-                    contaTxt2 = txtResultado.getText()+"3";                                                                        
+                    contaTxt2 = txtResultado.getText()+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " - " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(dividir == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "9");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1598,24 +1874,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " / " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
                 else if(multiplicar == true){
-                    if(contaTxt2 == null){                
+                    if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "9");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1623,24 +1900,25 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                   else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
                     conta2 = Double.parseDouble(contaTxt2);                        
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " * " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
             else if(porcentagem == true){
-                if(contaTxt2 == null){                
+                if(contaTxt2 == null && contaTxt1 != null && negativo == null && negativo2 == false){                
                     txtResultado.setText(null);    
                     txtResultado.setText(txtResultado.getText() + "9");        
                     contaTxt2 = txtResultado.getText();                    
@@ -1648,28 +1926,54 @@ public class Front_Calculadora extends javax.swing.JFrame {
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                       
                     conta2 = Double.parseDouble(contaTxt2);
                 }
-                else if(contaTxt2 != null && ponto == null){                        
+                else if(contaTxt2 != null && ponto == null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);                        
+                    conta2 = Double.parseDouble(contaTxt2); 
+                    
                 }
-                else if(contaTxt2 != null && ponto != null){                        
+                else if(contaTxt2 != null && ponto != null && contaTxt1 != null 
+                    && negativo == null && negativo2 == false){                        
                     txtResultado.setText(contaTxt2);
                     txtResultado.setText(txtResultado.getText());                    
                     contaTxt2 = txtResultado.getText()+ponto+"9";                                                                        
                     txtResultado.setText( contaTxt1+ " % " + contaTxt2);                                        
-                    conta2 = Double.parseDouble(contaTxt2);
-                    ponto = null;
+                    conta2 = Double.parseDouble(contaTxt2);                        
                 }
             }
         }
-        else{
+        else if(calculo == false && contaTxt1 == null && negativo2 == false && ponto == null){
             txtResultado.setText(txtResultado.getText() + "9");                        
             contaTxt1 = txtResultado.getText();
             conta1 = Double.parseDouble(contaTxt1);
-        }    
+            num.setNum1(conta1);
+        }   
+        else if(calculo == false && contaTxt1 != null && negativo2 == false && ponto == null){
+            txtResultado.setText(txtResultado.getText() + "9");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            num.setNum1(conta1);
+        }
+         else if(calculo == false && ponto != null && contaTxt1 != null
+                     && negativo == null && negativo2 == false){                        
+                    txtResultado.setText(contaTxt1);
+                    txtResultado.setText(txtResultado.getText()+ponto+"9");                    
+                    contaTxt1 = txtResultado.getText();                                                                                            
+                    conta1 = Double.parseDouble(contaTxt1);
+                    ponto = null;
+                    
+                }
+        else if(calculo == false && contaTxt1 == null && negativo2 == true){            
+            txtResultado.setText(null);
+            txtResultado.setText(txtResultado.getText() +negativo+"9");                        
+            contaTxt1 = txtResultado.getText();
+            conta1 = Double.parseDouble(contaTxt1);
+            negativo2 = false;
+            negativo = null;                        
+        }     
     }//GEN-LAST:event_botaoNoveActionPerformed
 
     private void botaoMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMultiplicarActionPerformed
@@ -1718,7 +2022,7 @@ public class Front_Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoPorcetagemActionPerformed
 
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
-        txtResultado.setText(" ");
+        txtResultado.setText(null);
         somar = false; subtrair = false; calculo = false; dividir = false;
         multiplicar = false; porcentagem = false;               
         num.setNum1(0.0);
@@ -1727,6 +2031,8 @@ public class Front_Calculadora extends javax.swing.JFrame {
         contaTxt2 = null;
         conta1 = 0;
         conta2 = 0;
+        ponto = null;
+        negativo = null;
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIgualActionPerformed
@@ -1734,31 +2040,33 @@ public class Front_Calculadora extends javax.swing.JFrame {
         num01 = conta1;
         num02 = conta2;        
         if(somar == true && porcentagem == false && ponto2 == false){            
-            resp = num01.intValue() + num02.intValue();            
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
+            resp = num01.intValue() + num02.intValue();                        
+            //resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();                             
-            txtResultado.setText(formatador.format(exe.calculoSomar(num01,num02))); 
-            contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.calculoSomar(num01,num02);
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1+n2);                        
+            txtResultado.setText(n1 +" + " + n2+ " = "+ formatador.format(exe.calculoSomar(num01,num02)));                        
+            //txtResultado.setText(null);
+            //txtResultado.setText( formatador.format(n1) +" + " + formatador.format(n2)+ " = "+ formatador.format(resp));             
+            //contaTxt1 = n1 + n1+ "";
+            contaTxt1 = (txtResultado.getText());            
+            conta1 = Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
             somar = false;
-            calculo = false;
+            calculo = false;            
         }
         if(somar == true && porcentagem == false && ponto2 == true){            
             resp = num01.intValue() + num02.intValue();            
             contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();                
-            txtResultado.setText(exe.calculoSomar(num01,num02)+""); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1+n2);                 
+            txtResultado.setText(n1 +" + " + n2+ " = "+exe.calculoSomar(num01,num02)+""); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.calculoSomar(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1769,13 +2077,13 @@ public class Front_Calculadora extends javax.swing.JFrame {
         else if(subtrair == true && porcentagem == false && ponto2 == false){
             resp = num01.intValue() - num02.intValue();            
             contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();                             
-            txtResultado.setText(formatador.format(exe.subtrair(num01,num02))); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1-n2);                 
+            txtResultado.setText(n1 +" - " + n2+ " = "+ formatador.format(exe.subtrair(num01,num02))); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.subtrair(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 =  Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1786,13 +2094,13 @@ public class Front_Calculadora extends javax.swing.JFrame {
         if(subtrair == true && porcentagem == false && ponto2 == true){            
             resp = num01.intValue() + num02.intValue();            
             contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();                
-            txtResultado.setText(exe.subtrair(num01,num02)+""); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1-n2);                 
+            txtResultado.setText(n1 +" - " + n2+ " = "+(exe.subtrair(num01,num02)+"")); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.subtrair(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1802,14 +2110,13 @@ public class Front_Calculadora extends javax.swing.JFrame {
         }
         else if(dividir == true && porcentagem == false && ponto2 ==false){
             resp = num01.intValue() / num02.intValue();        
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();
-            txtResultado.setText(formatador.format(exe.dividir(num01,num02))); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1/n2);    
+            txtResultado.setText(n1 +" / " + n2+ " = "+formatador.format(exe.dividir(num01,num02))); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.dividir(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 =  Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1819,14 +2126,13 @@ public class Front_Calculadora extends javax.swing.JFrame {
         }
         if(dividir == true && porcentagem == false && ponto2 == true){            
             resp = num01.intValue() * num02.intValue();            
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();                
-            txtResultado.setText(exe.dividir(num01,num02)+""); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1/n2);                      
+            txtResultado.setText(n1 +" / " + n2+ " = "+exe.dividir(num01,num02)+""); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.dividir(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 =  resp;
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1836,14 +2142,13 @@ public class Front_Calculadora extends javax.swing.JFrame {
         }
         else if(multiplicar == true && porcentagem == false && ponto2 ==false){
             resp = num01.intValue() * num02.intValue();        
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
             n1 = num01.intValue();
-            n2 = num02.intValue();
-            txtResultado.setText(formatador.format(exe.multiplicar(num01,num02))); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1*n2);      
+            txtResultado.setText(n1 +" * " + n2+ " = "+formatador.format(exe.multiplicar(num01,num02))); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.multiplicar(num01,num02);
+           //txtResultado.setText(contaTxt1); 
+            conta1 =  Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1852,14 +2157,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
         }
         if(multiplicar == true && porcentagem == false && ponto2 == true){            
             resp = num01.intValue() * num02.intValue();            
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
+            contaTxt1 = Double.toString(resp);            
             n1 = num01.intValue();
-            n2 = num02.intValue();                
-            txtResultado.setText(exe.multiplicar(num01,num02)+""); 
+            n2 = num02.intValue();        
+            resp1 = Integer.toString(n1*n2);                      
+            txtResultado.setText(n1 +" * " + n2+ " = "+exe.multiplicar(num01,num02)+""); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = exe.multiplicar(num01,num02);
+            //txtResultado.setText(contaTxt1); 
+            conta1 =  Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1870,14 +2175,16 @@ public class Front_Calculadora extends javax.swing.JFrame {
         
         else if(porcentagem == true && somar == true && ponto2 ==false){            
             num03 = num02 / 100;
-            num04 = (num03 * num01)+num01;
+            num04 = (num03 * num01);
             resp = num04.intValue();
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
+            contaTxt1 = Double.toString(resp);            
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1+n2); 
+            txtResultado.setText(n1 +" + " + n2+" % " + " = "+ formatador.format(exe.somarPorcentagem(num01, num04) + "" )); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = resp;
+            //txtResultado.setText(contaTxt1); 
+            conta1 = Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
@@ -1885,15 +2192,17 @@ public class Front_Calculadora extends javax.swing.JFrame {
             somar = false;
             calculo = false;
         }
-        else if(porcentagem == true && somar == true){            
+        else if(porcentagem == true && somar == true && ponto2 == true){            
             num03 = num02 / 100;
-            num04 = (num03 * num01)+num01;
+            num04 = (num03 * num01);
             resp = num04.intValue();
             contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1+n2);                  
+            txtResultado.setText(n1 +" + " + n2+" % " + " = "+ (exe.somarPorcentagem(num01, num02) + "" )); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
+           // txtResultado.setText(contaTxt1); 
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
@@ -1901,60 +2210,123 @@ public class Front_Calculadora extends javax.swing.JFrame {
             porcentagem = false;
             somar = false;
             calculo = false;
+            ponto2 = false;
         }
-        else if(porcentagem == true && subtrair == true){            
+        else if(porcentagem == true && subtrair == true && ponto2 == false){            
             num03 = num02 / 100;
-            num04 = (num03 * num01)-num01;
+            num04 = (num03 * num01);
             resp = num04.intValue();
             contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1-n2);                               
+            txtResultado.setText(n01 +" - " + n02+" % " + " = "+ formatador.format(exe.subtrairPorcentagem(num01, num02) + "" )); 
+            //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
+            conta1 = Double.parseDouble(formatador.format(resp));
+            conta2 = 0;
+            contaTxt2 = null;                         
+            resp1 = null;
+            porcentagem = false;
+            subtrair = false;
+            calculo = false;
+        }
+        else if(porcentagem == true && subtrair == true && ponto2 == true){            
+            num03 = num02 / 100;
+            num04 = (num03 * num01);
+            resp = num04.intValue();
+            contaTxt1 = Double.toString(resp);
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1-n2);                                
+            txtResultado.setText(n01 +" - " + n02+" % " + " = "+ exe.subtrairPorcentagem(num01, num02) + "" ); 
+            //txtResultado.setText(contaTxt1);
+            contaTxt1 = (txtResultado.getText());
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
             porcentagem = false;
-            somar = false;
+            subtrair = false;
+            calculo = false;
+            ponto2 = false;
+        }
+        else if(porcentagem == true && multiplicar == true && ponto2 == false){            
+            num03 = num02 / 100;
+            num04 = (num03 * num01);
+            resp = num04.intValue();
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1*n2);                      
+            txtResultado.setText(n01 +" * " + n02+" % " + " = "+ formatador.format(exe.multiplicarPorcentagem(num01, num02) + "" ));             
+            //txtResultado.setText(contaTxt1);
+            contaTxt1 = (txtResultado.getText());
+            conta1 = Double.parseDouble(formatador.format(resp));
+            conta2 = 0;
+            contaTxt2 = null;                         
+            resp1 = null;
+            porcentagem = false;
+            multiplicar= false;
             calculo = false;
         }
-        else if(porcentagem == true && multiplicar == true){            
+        else if(porcentagem == true && multiplicar == true && ponto2 == true){            
+            num03 = num02 / 100;
+            num04 = (num03 * num01);
+            resp = num04.intValue();
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1*n2);                         
+            txtResultado.setText(n1 +" * " + n2+" % " + " = "+exe.multiplicarPorcentagem(num01, num02) + "" ); 
+            //txtResultado.setText(contaTxt1); 
+            contaTxt1 = (txtResultado.getText());
+            conta1 = resp;
+            conta2 = 0;
+            contaTxt2 = null;                         
+            resp1 = null;
+            porcentagem = false;
+            multiplicar= false;
+            calculo = false;
+            ponto2 = false;
+        }
+        else if(porcentagem == true && dividir == true && ponto2 == false){            
+            num03 = num02 / 100;
+            num04 = (num03 * num01);
+            resp = num04.intValue();
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1/n2);              
+            txtResultado.setText(n1 +" / " + n2+" % "+ " = "+ formatador.format(exe.dividirPorcentagem(num01, num02) + "" ));                         
+            //txtResultado.setText(contaTxt1); 
+            contaTxt1 = (txtResultado.getText());
+            conta1 = Double.parseDouble(formatador.format(resp));
+            conta2 = 0;
+            contaTxt2 = null;                         
+            resp1 = null;
+            porcentagem = false;
+            dividir = false;
+            calculo = false;
+        }
+         else if(porcentagem == true && dividir == true && ponto2 == true){            
             num03 = num02 / 100;
             num04 = (num03 * num01)*num01;
             resp = num04.intValue();
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
-            contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
-            conta1 = resp;
-            conta2 = 0;
-            contaTxt2 = null;                         
-            resp1 = null;
-            porcentagem = false;
-            somar = false;
-            calculo = false;
-        }
-        else if(porcentagem == true && dividir == true){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01)*num01;
             resp = num04.intValue();
-            contaTxt1 = Double.toString(resp);
-            resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
+            n1 = num01.intValue();
+            n2 = num03.intValue();        
+            resp1 = Integer.toString(n1/n2);          
+            txtResultado.setText(n1 +" / " + n2+" % " + " = "+ exe.dividirPorcentagem(num01, num02) + "" );            
+            //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
             resp1 = null;
-            porcentagem = false;
-            somar = false;
+            dividir = false;
+            multiplicar= false;
             calculo = false;
         }
         else if(porcentagem == true && somar == false && subtrair == false
-                && dividir == false && multiplicar == false && contaTxt2 != null){            
+            && dividir == false && multiplicar == false && contaTxt2 != null){            
             num03 = num01 / 100;
             num04 = num03 * num02;
             resp = num04.intValue();
