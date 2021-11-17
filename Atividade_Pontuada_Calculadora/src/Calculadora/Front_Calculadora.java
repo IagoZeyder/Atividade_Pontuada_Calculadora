@@ -194,49 +194,48 @@ public class Front_Calculadora extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSete, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoQuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoUm, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoSete, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoQuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoUm, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoZero, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoZero, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botaoIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoDois, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botaoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botaoSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(botaoOito, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botaoNove, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaosubtrair, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botaoMultiplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoPorcetagem, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(botaoDividir, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoDois, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoSeis, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(botaoOito, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoNove, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaosubtrair, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botaoMultiplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoPorcetagem, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(botaoDividir, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1)))
-                .addContainerGap(137, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel1)))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2173,17 +2172,17 @@ public class Front_Calculadora extends javax.swing.JFrame {
             ponto2 = false;
         }
         
-        else if(porcentagem == true && somar == true && ponto2 ==false){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
-            contaTxt1 = Double.toString(resp);            
+        else if(porcentagem == true && somar == true && ponto2 ==false){                        
+            num03 = (num02 / 100)*num01;
+            //num04 = num03 * num01;
+            resp = num03.intValue() + num01.intValue();                           
+            contaTxt1 = Integer.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
             resp1 = Integer.toString(n1+n2); 
-            txtResultado.setText(n1 +" + " + n2+" % " + " = "+ formatador.format(exe.somarPorcentagem(num01, num04) + "" )); 
-            contaTxt1 = (txtResultado.getText());
-            //txtResultado.setText(contaTxt1); 
+            txtResultado.setText(n1 +" + " + formatador.format(num02)+" % " + " = "+ formatador.format(exe.somarPorcentagem(num01, num02))); 
+            //contaTxt1 = (txtResultado.getText());                         
+            //txtResultado.setText(contaTxt1);             
             conta1 = Double.parseDouble(formatador.format(resp));
             conta2 = 0;
             contaTxt2 = null;                         
@@ -2193,16 +2192,16 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
         else if(porcentagem == true && somar == true && ponto2 == true){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
-            contaTxt1 = Double.toString(resp);
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue() + num01.intValue();            
             n1 = num01.intValue();
             n2 = num03.intValue();        
             resp1 = Integer.toString(n1+n2);                  
-            txtResultado.setText(n1 +" + " + n2+" % " + " = "+ (exe.somarPorcentagem(num01, num02) + "" )); 
+            txtResultado.setText(n1 +" + " + formatador.format(num02)+" % " + " = "+ (exe.somarPorcentagem(num01, num02))); 
             contaTxt1 = (txtResultado.getText());
            // txtResultado.setText(contaTxt1); 
+           contaTxt1 = Double.toString(resp + num03);
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
@@ -2213,14 +2212,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
             ponto2 = false;
         }
         else if(porcentagem == true && subtrair == true && ponto2 == false){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()-num01.intValue();
             contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
             resp1 = Integer.toString(n1-n2);                               
-            txtResultado.setText(n01 +" - " + n02+" % " + " = "+ formatador.format(exe.subtrairPorcentagem(num01, num02) + "" )); 
+            txtResultado.setText(n1 +" - " + formatador.format(num02)+" % " + " = "+ formatador.format(exe.subtrairPorcentagem(num01, num02) + "" )); 
             //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
             conta1 = Double.parseDouble(formatador.format(resp));
@@ -2232,14 +2231,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
         else if(porcentagem == true && subtrair == true && ponto2 == true){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()-num01.intValue();
             contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
             resp1 = Integer.toString(n1-n2);                                
-            txtResultado.setText(n01 +" - " + n02+" % " + " = "+ exe.subtrairPorcentagem(num01, num02) + "" ); 
+            txtResultado.setText(n1 +" - " + formatador.format(num02)+" % " + " = "+ exe.subtrairPorcentagem(num01, num02) ); 
             //txtResultado.setText(contaTxt1);
             contaTxt1 = (txtResultado.getText());
             conta1 = resp;
@@ -2252,14 +2251,15 @@ public class Front_Calculadora extends javax.swing.JFrame {
             ponto2 = false;
         }
         else if(porcentagem == true && multiplicar == true && ponto2 == false){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()*num01.intValue();
+            contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
-            resp1 = Integer.toString(n1*n2);                      
-            txtResultado.setText(n01 +" * " + n02+" % " + " = "+ formatador.format(exe.multiplicarPorcentagem(num01, num02) + "" ));             
-            //txtResultado.setText(contaTxt1);
+            resp1 = Integer.toString(n1*n2);             
+            txtResultado.setText(n01 +" * " + formatador.format(num02)+" % " + " = "+ formatador.format(exe.multiplicarPorcentagem(num01, num02)));             
+            //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
             conta1 = Double.parseDouble(formatador.format(resp));
             conta2 = 0;
@@ -2270,13 +2270,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
         else if(porcentagem == true && multiplicar == true && ponto2 == true){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()*num01.intValue();
+            contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
-            resp1 = Integer.toString(n1*n2);                         
-            txtResultado.setText(n1 +" * " + n2+" % " + " = "+exe.multiplicarPorcentagem(num01, num02) + "" ); 
+            resp1 = Integer.toString(n1*n2);             
+            txtResultado.setText(n01 +" * " + formatador.format(num02)+" % " + " = "+ (exe.multiplicarPorcentagem(num01, num02)));    
             //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
             conta1 = resp;
@@ -2289,13 +2290,14 @@ public class Front_Calculadora extends javax.swing.JFrame {
             ponto2 = false;
         }
         else if(porcentagem == true && dividir == true && ponto2 == false){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01);
-            resp = num04.intValue();
+            num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()/num01.intValue();
+            contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
-            resp1 = Integer.toString(n1/n2);              
-            txtResultado.setText(n1 +" / " + n2+" % "+ " = "+ formatador.format(exe.dividirPorcentagem(num01, num02) + "" ));                         
+            resp1 = Integer.toString(n1/n2);      
+            txtResultado.setText(n1 +" / " + formatador.format(num02)+" % "+ " = "+ formatador.format(exe.dividirPorcentagem(num01, num02)));                         
             //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
             conta1 = Double.parseDouble(formatador.format(resp));
@@ -2307,14 +2309,15 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
          else if(porcentagem == true && dividir == true && ponto2 == true){            
-            num03 = num02 / 100;
-            num04 = (num03 * num01)*num01;
-            resp = num04.intValue();
-            resp = num04.intValue();
+           num03 = (num02 / 100)*num01;
+            //num04 = (num03 * num01);
+            resp = num03.intValue()/num01.intValue();
+            contaTxt1 = Double.toString(resp);
             n1 = num01.intValue();
             n2 = num03.intValue();        
-            resp1 = Integer.toString(n1/n2);          
-            txtResultado.setText(n1 +" / " + n2+" % " + " = "+ exe.dividirPorcentagem(num01, num02) + "" );            
+            resp1 = Integer.toString(n1/n2);      
+            txtResultado.setText(n1 +" / " + formatador.format(num02)+" % "+ " = "+ (exe.dividirPorcentagem(num01, num02)));                         
+            //txtResultado.setText(contaTxt1);            
             //txtResultado.setText(contaTxt1); 
             contaTxt1 = (txtResultado.getText());
             conta1 = resp;
@@ -2326,15 +2329,16 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
         else if(porcentagem == true && somar == false && subtrair == false
-            && dividir == false && multiplicar == false && contaTxt2 != null){            
-            num03 = num01 / 100;
-            num04 = num03 * num02;
-            resp = num04.intValue();
+            && dividir == false && multiplicar == false && contaTxt2 == null){            
+            num03 = num01 / 100;            
+            resp = num03.intValue();
+            n1 = num01.intValue();
+            //resp1 = Integer.toString(num03*num02);
             contaTxt1 = Double.toString(resp);
             resp1 = Double.toString(resp);
-            txtResultado.setText(resp + "" ); 
+            txtResultado.setText(n1 +" % " + " = " + (exe.porcentemUmNumero(num01)));                         
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
+            //txtResultado.setText(contaTxt1); 
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         
@@ -2344,12 +2348,16 @@ public class Front_Calculadora extends javax.swing.JFrame {
             calculo = false;
         }
         else if(porcentagem == true && somar == false && subtrair == false
-        && dividir == false && multiplicar == false && contaTxt2 == null){                        
-            num03 = num01 / 100;            
-            txtResultado.setText(num01/100 + "");             
-            resp1 = Double.toString(num03);                        
+        && dividir == false && multiplicar == false && contaTxt2 != null){                        
+            num03 = (num01 / 100)*num02;
+            resp = num03.intValue();
+            n1 = num01.intValue();
+            resp1 = Double.toString(resp);
+            txtResultado.setText(n1 +" % " + formatador.format(num02)+" = " + formatador.format
+            (exe.porcentemDoisNumero(num01,num02)));
+            resp1 = Double.toString(resp);                        
             contaTxt1 = (txtResultado.getText());
-            txtResultado.setText(contaTxt1); 
+            //txtResultado.setText(contaTxt1); 
             conta1 = resp;
             conta2 = 0;
             contaTxt2 = null;                         

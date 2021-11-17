@@ -34,22 +34,22 @@ public class executando extends pegarNum implements calculos, Porcentagem {
 
     @Override
     public double somarPorcentagem(double a, double b) {
-        return a + b;
+        return a + ((b/100)*a);
     }
 
     @Override
     public double subtrairPorcentagem(double a, double b) {
-        return a - b;
+        return a - ((b/100)*a);
     }
 
     @Override
     public double dividirPorcentagem(double a, double b) {
-        return a / b;
+        return a / ((b/100)*a);
     }
 
     @Override
     public double multiplicarPorcentagem(double a, double b) {
-        return a * b;
+        return a * ((b/100)*a);
     }
 
     @Override
